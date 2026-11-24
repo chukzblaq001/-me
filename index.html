@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e83e8c">
+  <meta name="description" content="Thoughtful gifts, pretty essentials and customized gift boxes from Everything Abby.">
+  <title>Everything Abby | Gifts made lovely</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="announcement">A little something lovely, for every kind of moment ✨</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Everything Abby home"><span class="brand-mark">EA</span><span><b>Everything Abby</b><small>Gifts • Beauty • Lifestyle</small></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <nav id="mainNav">
+      <a href="#home">Home</a><a href="#shop">Shop</a><a href="#custom">Custom gifts</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-button" id="cartOpen">Bag <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">MAKE THEIR DAY EXTRA SPECIAL</p>
+        <h1>Thoughtful gifts.<br><em>Beautiful moments.</em></h1>
+        <p>Discover pretty essentials and curated gift boxes made to bring a smile. Choose a ready-made set or create one that feels personal.</p>
+        <div class="hero-actions"><a class="btn primary" href="#shop">Shop gift boxes</a><a class="text-link" href="#custom">Create a custom gift →</a></div>
+        <div class="hero-note"><span>♡</span> Carefully put together, just for you.</div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-image main-photo"><img src="assets/gift-set-3.jpeg" alt="Pink gift box set from Everything Abby"></div>
+        <div class="hero-sticker">GIFT<br>HAPPY</div>
+        <div class="hero-caption">A gift that says<br><b>“I thought of you.”</b></div>
+      </div>
+    </section>
+
+    <section class="trust-strip"><span>♡ Thoughtfully curated</span><span>✿ Custom gift options</span><span>↗ Order with ease</span><span>✧ Made for every occasion</span></section>
+
+    <section class="section" id="shop">
+      <div class="section-heading"><div><p class="eyebrow">THE GIFT EDIT</p><h2>Find something lovely</h2><p>Explore our gift sets and little treats.</p></div><div class="shop-tools"><input id="searchInput" type="search" placeholder="Search gifts..." aria-label="Search products"><select id="categoryFilter" aria-label="Filter category"><option value="all">All gifts</option><option value="Gift boxes">Gift boxes</option><option value="Beauty & care">Beauty & care</option><option value="Accessories">Accessories</option><option value="Lifestyle">Lifestyle</option></select></div></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="custom-section" id="custom">
+      <div class="custom-photo"><img src="assets/gift-set-2.jpeg" alt="Purple themed curated gift set"></div>
+      <div class="custom-copy"><p class="eyebrow">MAKE IT PERSONAL</p><h2>Your gift.<br><em>Your way.</em></h2><p>Tell us who you're celebrating, the occasion, your preferred colours and your budget. We'll help create a gift box that feels just right.</p>
+        <form id="customForm" class="custom-form">
+          <label>Your name<input name="name" required placeholder="Your name"></label>
+          <label>Occasion<select name="occasion" required><option value="">Choose an occasion</option><option>Birthday</option><option>Anniversary</option><option>Graduation</option><option>Thank you</option><option>Self-care treat</option><option>Just because</option><option>Other</option></select></label>
+          <div class="form-row"><label>Budget (₦)<input name="budget" type="number" min="1000" step="500" required placeholder="e.g. 25000"></label><label>Preferred colours<input name="colours" placeholder="e.g. pink and white"></label></div>
+          <label>What would you like included?<textarea name="details" rows="3" placeholder="Tell us your ideas..."></textarea></label>
+          <button class="btn dark" type="submit">Send custom gift request</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews">
+      <div class="section-heading"><div><p class="eyebrow">KIND WORDS</p><h2>Love notes from customers</h2><p>Share your experience with Everything Abby.</p></div></div>
+      <div class="review-layout"><div id="reviewList" class="review-list"></div>
+        <form id="reviewForm" class="review-form"><h3>Leave a review</h3><label>Your name<input name="name" required placeholder="Name"></label><label>Rating<select name="rating" required><option value="5">★★★★★ — Loved it</option><option value="4">★★★★ — Great</option><option value="3">★★★ — Good</option><option value="2">★★ — Could be better</option><option value="1">★ — Not satisfied</option></select></label><label>Your feedback<textarea name="comment" required rows="4" placeholder="Tell us what you think..."></textarea></label><button class="btn primary" type="submit">Submit feedback</button><small>Reviews appear on this demo store after submission.</small></form>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact"><div><p class="eyebrow">LET'S MAKE IT LOVELY</p><h2>Need a little help choosing?</h2><p>Contact us about products, custom boxes, delivery and orders.</p></div><a class="btn light" id="whatsappLink" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a></section>
+  </main>
+
+  <footer><a class="brand footer-brand" href="#home"><span class="brand-mark">EA</span><span><b>Everything Abby</b><small>Gifts • Beauty • Lifestyle</small></span></a><p>Thoughtful gifts for life's lovely moments.</p><small>© <span id="year"></span> Everything Abby. All rights reserved.</small><button class="admin-link" id="adminOpen">Store admin</button></footer>
+
+  <div class="overlay" id="cartOverlay"></div>
+  <aside class="drawer" id="cartDrawer" aria-label="Shopping bag"><div class="drawer-head"><h2>Your bag</h2><button class="icon-btn" id="cartClose" aria-label="Close bag">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-total"><span>Subtotal</span><b id="cartSubtotal">₦0</b></div><p class="muted tiny">Delivery fee, if applicable, will be confirmed before dispatch.</p><button class="btn primary full" id="checkoutOpen">Continue to checkout</button></aside>
+
+  <div class="modal" id="checkoutModal"><div class="modal-card"><button class="modal-close" data-close="checkoutModal">×</button><p class="eyebrow">ALMOST YOURS</p><h2>Checkout</h2><div id="checkoutSummary" class="checkout-summary"></div>
+    <form id="checkoutForm" class="checkout-form">
+      <div class="form-row"><label>Full name<input name="name" required></label><label>Phone number<input name="phone" type="tel" required placeholder="080..."></label></div>
+      <label>Email (optional)<input name="email" type="email" placeholder="you@example.com"></label>
+      <label>Delivery address<textarea name="address" rows="2" required placeholder="House number, street, area and city"></textarea></label>
+      <label>Delivery note (optional)<input name="note" placeholder="Landmark or special instruction"></label>
+      <fieldset><legend>Choose payment method</legend><label class="payment-choice"><input type="radio" name="payment" value="Bank transfer" checked> Bank transfer</label><label class="payment-choice"><input type="radio" name="payment" value="Cash on delivery"> Cash on delivery</label></fieldset>
+      <div class="bank-info" id="bankInfo"><b>Bank transfer details</b><p id="bankDetails">Bank details will be provided by the store. Please contact us or check back later.</p><small>After placing your order, use the order reference as your transfer narration. Your order is pending until payment is verified by the store.</small></div>
+      <button class="btn primary full" type="submit">Place order</button>
+    </form>
+  </div></div>
+
+  <div class="modal" id="successModal"><div class="modal-card success-card"><div class="success-icon">✓</div><p class="eyebrow">ORDER RECEIVED</p><h2>Thank you!</h2><p id="successMessage">Your order has been saved.</p><button class="btn primary full" data-close="successModal">Continue shopping</button></div></div>
+
+  <div class="modal" id="adminModal"><div class="modal-card admin-card"><button class="modal-close" data-close="adminModal">×</button><div id="adminLogin"><p class="eyebrow">STORE MANAGEMENT</p><h2>Admin sign in</h2><p class="muted">Demo PIN: <b>2468</b>. Change this before sharing the site.</p><form id="adminLoginForm"><label>Admin PIN<input name="pin" type="password" inputmode="numeric" required placeholder="Enter PIN"></label><button class="btn dark full">Open dashboard</button></form></div>
+    <div id="adminDashboard" hidden><div class="admin-top"><div><p class="eyebrow">EVERYTHING ABBY</p><h2>Store dashboard</h2></div><button class="btn outline" id="adminLogout">Log out</button></div>
+      <div class="admin-tabs"><button class="tab active" data-tab="orders">Orders</button><button class="tab" data-tab="products">Products</button><button class="tab" data-tab="settings">Settings</button><button class="tab" data-tab="feedback">Feedback</button></div>
+      <div id="adminContent"></div>
+    </div>
+  </div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body></html>
